@@ -1,0 +1,671 @@
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    background: #eaeaea;
+    font-family: "Open Sans" sans-serif;
+    font-size: 16px;
+}
+.contenedor{
+    width: 90%; /*cuando tengamos la pantalla chica va a medir esto*/
+    max-width: 1000px; /*cuando tengamos la pantalla completa va a medir esto*/
+    margin: auto; /*ESTO ES OMPORTANTE PARA QUE TODOS NUESTROS CONTENEDORES SE PONGAN EN ELE CENTRO*/
+    overflow: hidden; /*hidden(que recorta el contenido fuera de los límites del elemento), hidden; hace que el texto que sobresalga por encima del div no sea visible.*/
+}
+
+/*-------------------------------- HEADER-----------------------------------------*/
+header{
+    background: url("../img/bg.jpg") #3895ea; /*el ../ es para pasarnos una carpeta atras ya que estabamos en la carpeta css y con el ../ nos salimos y esntramos a la de img*/
+    background-repeat:no-repeat; /*para que no se repita*/
+    background-position: center; /*para que se centre*/
+    max-height: 600px; /*un alto maximo de 600px*/
+}
+header .menu{
+    margin: 40px 0; /*para que se separe 40px arriba y abajo y de 0 a los lados*/
+    text-align: right;
+}
+
+header .menu a{
+    margin: 0 20px; /*para que se separe 0px arriba y abajo y de 20px a los lados*/
+    /*color: #84817a;*/
+    color: #fff;
+    font-weight: 700;
+    padding-bottom: 9px; /*margen interno*/
+    font-size: 1.5em; /*nuestro font-size vale 16px asi que 1em =16px lo declaramos en el body*/
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 2px solid transparent; /*este se l dclaramos de una vez por que si no se lo ponemos a la hora de pasar el maose se va a ver un leve salto en la imagen y es por que le estar agregando los 2px*/
+
+}
+header .menu a:hover{
+    border-bottom: 2px solid #fff ;
+   
+}
+header .contenedor-texto {
+    display: flex; /*Vamos a trabajar con flexbox para centrar este contenedor*/
+    justify-content: center; /*lo alinea en medio de una fila*/
+    align-content: center; /*lo alinea en medio de una columna*/
+    margin: 190px 0;
+}
+
+header .contenedor-texto .texto {
+    border: 2px solid #fff; /*para encerrar en un cuadrado gris el texto*/
+    border-radius: 15px;  /*para redondear el cuadrado*/
+    display: inline-block; /*El elemento aparece en línea pero se comporta como un elemento block. Un elemento inline-block resulta muy útil cuando queremos dar una anchura al elemento.*/
+    text-align: center;
+    padding: 20px 60px; /*margen interior */
+
+}
+header .contenedor-texto .texto h1,
+header .contenedor-texto  .texto h2{
+    color: #fff;
+    font-family: roboto;
+    font-weight: 700; /*en nuestro enlace a google fonts tenemos este GROSOR de la fuente*/
+    margin: 0; /*Por defecto tienen un margen se lo quitamos para que se junten*/
+}
+
+header .contenedor-texto .texto .nombre{
+    margin-bottom: 10px;
+    font-size: 60px;
+    line-height: 50px;/*En otras palabras, se utiliza para establecer la cantidad de espacio en este caso es  por encima del elemento en línea,*/
+}
+
+header .contenedor-texto .texto .profesion{
+    font-size: 25px;
+    line-height: 25px;/*En otras palabras, se utiliza para establecer la cantidad de espacio por encima y por debajo de los elementos en línea es decir se va a separar 25px arriba(del nombre) y abajo (de la linea del recuadro )*/
+}
+
+/*----------------------- Main -------------------------*/
+.main .contenedor{
+    overflow: visible; /*estamos sobreescribiendo en el  div contenedor para que la foto se coloque arriba de la imagen de la cabecera  */
+
+}
+
+.main .acerca-de{
+    text-align: center; /*la imagen tambien se centro por que son de tipo linea*/
+    
+}
+
+.main .acerca-de .foto {
+    margin-top: -80px;
+    
+
+}
+
+.main .acerca-de .foto img {
+    vertical-align: top;
+    border-radius: 50%;
+    border: 5px solid rgba(128,128,128,0.2) ;
+}
+
+.main .acerca-de .texto{
+    color: #000; /*Color de la fuente*/
+    font-weight: 600; /*grosor de la fuente*/
+    font-size: 1em; /*1em=16px*/
+    line-height: 30px; /*espacio entre enunciados*/
+    width: 80%;
+    margin: 40px auto 60px auto; /*margen de 40px arriba  y de automatico a la derecha y 60px abajo y auto a la izquierda  lados para que se centre*/
+}
+.main .acerca-de .texto .titulo {
+    font-size: 3em;
+    line-height: 2em; /*espacio entre enunciados*/
+    margin-bottom: 40px; /*margen de abajo*/
+    font-weight: 300px; /*grosor de la letra*/
+    color: #1e2b38;
+    text-align: center;
+
+}
+.main .acerca-de .texto .bold{
+    color: #3895ea;
+    text-decoration: underline;
+}
+
+.main .trabajos{
+    background: #aaa69d;
+    padding: 60px 0;
+}
+.main .trabajos .contenedor{
+    overflow: hidden;
+}
+
+.main .trabajos .titulo{
+    font-size: 2em;
+    line-height: 2em; /*espacio entre enunciados*/
+    margin-bottom: 40px; /*margen de abajo*/
+    font-weight: 300px; /*grosor de la letra*/
+    color: #323068;
+    text-align: center;
+
+}
+.main .trabajos .contenedor-trabajos { /*este es el contenedor padre*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.main .trabajos .contenedor-trabajos .trabajo{
+    width: 30%;
+    margin-bottom: 40px;
+    /*gap: 10px;*/
+}
+
+.main .trabajos .contenedor-trabajos .trabajo .thumb{
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+
+.main .trabajos .contenedor-trabajos .trabajo .thumb img{
+    /*width: 500px;
+    height: 600px;*/
+   
+   width: 100%;
+   vertical-align: top;
+   border-radius: 3px;
+}
+
+
+.main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12{
+    height: 470px;
+}
+
+.main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo11{
+    height: 390px;
+}
+.main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo9{
+    height: 390px;
+}
+.main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6{
+    height: 390px;
+}
+
+
+
+
+.main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo2{
+    height: 476px;
+}
+
+.main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo{
+    height: 408px;
+}
+
+
+.main .trabajos .contenedor-trabajos .trabajo .descripcion .nombre{
+    font-weight: 700;
+    /*color: #3895ea;*/
+    color: #323068;
+    margin-bottom: 10px;
+}
+
+.main .trabajos .contenedor-trabajos .trabajo .descripcion .categoria{
+    font-size: 14px;
+    /*color: #636363;*/
+    color: #fff;
+}
+
+footer .contacto {
+    margin: 60px 0;
+}
+footer .contacto .titulo {
+    font-size: 2em;
+    line-height: 2em; /*espacio entre enunciados*/
+    margin-bottom: 40px; /*margen de abajo*/
+    font-weight: 300px; /*grosor de la letra*/
+    color: #3895ea;
+    text-align: center;
+}
+
+footer .contacto .formulario {
+display: flex;
+flex-wrap: wrap; /*wrap : indica al CSS que puede haber cambio de línea. Los elementos flex aparecen colocados en varias líneas.*/
+justify-content: space-between;
+}
+
+footer .contacto .formulario input[type="text"],
+footer .contacto .formulario input[type="email"],
+footer .contacto .formulario textarea {
+    border: 5px solid #eaeaea;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 20px;
+    color: #a4a4a4;
+    
+    
+
+}
+footer .contacto .formulario input{
+    width: 49%;/*ancho*/
+    margin-bottom: 15px; /*margen hacia abajo*/
+}
+footer .contacto .formulario textarea{
+    width: 100%;    /*para que abarque todo el contenedor*/
+    min-width: 100%; /*para que abarque todo el contenedor tambien cuando se haga pequeña la pantalla*/
+    max-width: 100%; /*para que abarque todo el contenedor cuando este en pantalla normal*/
+    height: 100px; /*es el alto por defecto*/
+    min-height: 100px; /*es el alto minimo cuando se escriba pocas palabras*/
+    max-height: 200px; /*/*es el alto cuando se escriban muchas palabras*/
+    margin-bottom: 15px;
+}
+
+footer .contacto .formulario .boton{
+    margin: auto;
+    
+    background: #aaa69d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 2em;
+    cursor: pointer;
+
+}
+footer .contacto .formulario .boton:hover{
+    background:#5a5a5a ;
+    color:#aaa69d ;
+}
+footer .redes-sociales{
+    background: #1e2b38;
+    padding: 60px 0;
+}
+
+footer .redes-sociales .contenedor{ /*esta es la clase padre*/
+    display: flex;
+    justify-content: center;
+}
+
+
+footer .redes-sociales a{
+    color: #fff;
+    text-align: center;
+    width: 100px;
+    display: block;
+    padding: 15px 0;
+    border-radius: 3px;
+    font-size: 30px;
+    
+    margin: 0 20px;
+
+}
+
+footer .redes-sociales .twitter:hover  {  background: #1da1f2; }
+footer .redes-sociales .facebook:hover {  background: #3b5998; }
+footer .redes-sociales .youtube:hover  {  background: #ff0000; }
+footer .redes-sociales .github:hover   {  background: #6e5494; }
+footer .redes-sociales .instagram:hover{  background: #fcaf45; }
+
+
+@media(max-width: 1024px){
+    .main .trabajos .contenedor-trabajos .trabajo{
+        width: 46%;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12{
+        height: 670px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo11{
+        height: 545px;
+    }
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo{
+        height: 645px;
+    }
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo2{
+        height: 500px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo9{
+        height: 500px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6{
+        height: 545px;
+    }
+
+}
+
+@media( max-width: 768px){
+    header .menu{
+         text-align: center;
+     }
+ 
+     .main .trabajos .contenedor-trabajos .trabajo{
+         width: 46%;
+     }
+     .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12 {
+         height: 517px;
+     }
+ 
+     .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo2 {
+         height: 450px;
+     }
+     .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo9 {
+        height: 450px;
+    }
+ 
+     .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo11 {
+         height: 450px;
+     }
+     .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6 {
+         height: 450px;
+     }
+ 
+ 
+     header .contenedor-texto .texto .nombre{
+         font-size: 35px;
+     }
+ 
+     header .contenedor-texto .texto .profesion{
+         font-size: 18px;
+     }
+ }
+ 
+@media( max-width: 736px){
+    header .menu{
+         text-align: center;
+     }
+ 
+     .main .trabajos .contenedor-trabajos .trabajo{
+         width: 46%;
+     }
+     .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12 {
+         height: 495px;
+     }
+ 
+     .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo9 {
+         height: 495px;
+     }
+ 
+     .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo11 {
+         height: 450px;
+     }
+     .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6 {
+         height: 450px;
+     }
+ 
+ 
+     header .contenedor-texto .texto .nombre{
+         font-size: 35px;
+     }
+ 
+     header .contenedor-texto .texto .profesion{
+         font-size: 18px;
+     }
+ }
+  
+@media( max-width: 734px){
+   header .menu{
+        text-align: center;
+    }
+
+    .main .trabajos .contenedor-trabajos .trabajo{
+        width: 46%;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12 {
+        height: 495px;
+    }
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo9 {
+        height: 495px;
+    }
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo11 {
+        height: 450px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6 {
+        height: 450px;
+    }
+
+
+    header .contenedor-texto .texto .nombre{
+        font-size: 35px;
+    }
+
+    header .contenedor-texto .texto .profesion{
+        font-size: 18px;
+    }
+}
+
+@media( max-width: 684px){ 
+    header .contenedor-texto .texto .nombre{
+        font-size: 25px;
+    }
+
+    header .contenedor-texto .texto .profesion{
+        font-size: 18px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12{
+        height: 460px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo11{
+        height: 350px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6{
+        height: 370px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo2{
+        height: 350px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo9{
+        height: 350px;
+    }
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6{
+        height: 350px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo{
+        height: 370px;
+    }
+    
+}
+
+@media( max-width: 667px){ 
+    header .contenedor-texto .texto .nombre{
+        font-size: 25px;
+    }
+
+    header .contenedor-texto .texto .profesion{
+        font-size: 18px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12{
+        height: 445px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo11{
+        height: 350px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6{
+        height: 350px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo2{
+        height: 350px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo9{
+        height: 350px;
+    }
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6{
+        height: 350px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo{
+        height: 400px;
+    }
+    
+}
+
+@media( max-width: 500px){
+    
+
+    header .menu  {
+        text-align: center;
+        margin: 10px auto; /*para que se separe 0px arriba y abajo y de 20px a los lados*/
+        /*color: #84817a;*/
+        
+        font-weight: 300;
+        padding-bottom: 15px; /*margen interno*/
+        font-size: 15px; /*nuestro font-size vale 16px asi que 1em =16px lo declaramos en el body*/
+    }
+     header .menu a{
+         color:#323068;
+     }
+     .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12{
+        height: 335px;
+    }
+
+    
+}
+
+@media( max-width: 412px){ 
+    header .contenedor-texto .texto .nombre{
+        font-size: 25px;
+    }
+
+    header .contenedor-texto .texto .profesion{
+        font-size: 18px;
+    }
+    footer .redes-sociales .contenedor{
+        flex-wrap: wrap;
+        padding: 20px 0;
+    }
+
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12{
+        height: 275px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo11{
+        height: 200px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6{
+        height: 200px;
+    }
+    
+    
+    
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo2{
+        height: 200px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo{
+        height: 250px;
+    }
+
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo9{
+        height: 200px;
+    }
+
+}    
+
+
+@media( max-width: 375px) { 
+
+    header .contenedor-texto .texto .nombre{
+        font-size: 18px;
+    }
+
+    header .contenedor-texto .texto .profesion{
+        font-size: 15px;
+    }
+    footer .redes-sociales .contenedor{
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12{
+        height: 250px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo11{
+        height: 220px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6{
+        height: 220px;
+    }
+    
+    
+    
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo2{
+        height: 220px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo{
+        height: 220px;
+    }
+
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo9{
+        height: 220px;
+    }
+
+
+
+}
+
+
+@media( max-width: 300px) {
+
+   
+
+    
+
+    header .contenedor-texto .texto .nombre{
+        font-size: 18px;
+    }
+
+    header .contenedor-texto .texto .profesion{
+        font-size: 15px;
+    }
+    footer .redes-sociales .contenedor{
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo12{
+        height: 200px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo11{
+        height: 220px;
+    }
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo6{
+        height: 220px;
+    }
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo2{
+        height: 220px;
+    }
+    
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo{
+        height: 220px;
+    }
+
+
+    .main .trabajos .contenedor-trabajos .trabajo .thumb  .nuevo9{
+        height: 220px;
+    }
+    header .contenedor-texto .texto {
+        border: 2px solid #fff; /*para encerrar en un cuadrado gris el texto*/
+        border-radius: 15px;  /*para redondear el cuadrado*/
+        display: inline-block; /*El elemento aparece en línea pero se comporta como un elemento block. Un elemento inline-block resulta muy útil cuando queremos dar una anchura al elemento.*/
+        text-align: center;
+        padding: 10px 40px; /*margen interior */
+    
+    }
+    footer .contacto .formulario input{
+        width: 100%;/*ancho*/
+        margin-bottom: 15px; /*margen hacia abajo*/
+    }
+
+
+}
